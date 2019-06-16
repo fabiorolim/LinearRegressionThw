@@ -13,7 +13,7 @@ import settings
 class TestValidateModel(unittest.TestCase):
 
     def setUp(self):
-        path = settings.PATH
+        path = settings.PATH_TEST
         url = settings.URL
         self.manager = ManagerData()
         self.manager.set_csv_data_collector(path)

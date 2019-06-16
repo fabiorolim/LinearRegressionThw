@@ -7,7 +7,7 @@ class TestGetData(unittest.TestCase):
 
     def setUp(self):
         url = settings.URL
-        path = settings.PATH
+        path = settings.PATH_TEST
         self.manager = ManagerData()
         self.manager.set_csv_data_collector(path)
         self.manager.set_api_data_collector(url)
