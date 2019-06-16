@@ -7,7 +7,6 @@ from facade_collectors import ManagerData
 
 import settings
 
-
 # TODO: refatorar
 
 class TestValidateModel(unittest.TestCase):
