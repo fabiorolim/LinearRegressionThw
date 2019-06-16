@@ -1,6 +1,6 @@
 import unittest
-from facade_collectors import ManagerData
-import settings
+from core.facade_collectors import ManagerData
+from core import settings
 
 
 class TestGetData(unittest.TestCase):

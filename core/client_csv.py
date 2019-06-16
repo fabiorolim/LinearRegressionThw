@@ -1,8 +1,8 @@
-from facade_collectors import ManagerData
+from core.facade_collectors import ManagerData
 from sklearn.linear_model import LinearRegression
-import settings
+import core.settings
 
-path = settings.PATH
+path = core.settings.PATH
 
 manager = ManagerData()
 manager.set_csv_data_collector(path)

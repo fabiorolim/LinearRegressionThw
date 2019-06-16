@@ -1,4 +1,4 @@
-from collectors import CsvDataCollector, ApiDataCollector
+from core.collectors import CsvDataCollector, ApiDataCollector
 
 
 class ManagerData:

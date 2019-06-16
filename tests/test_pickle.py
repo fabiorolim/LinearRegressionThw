@@ -1,9 +1,10 @@
-from facade_collectors import ManagerData
+from core.facade_collectors import ManagerData
 from sklearn.linear_model import LinearRegression
-import settings
+import core.settings
+import pickle
 
-url = settings.URL
-path = settings.PATH
+url = core.settings.URL
+path = core.settings.PATH_TEST
 
 manager = ManagerData()
 manager.set_api_data_collector(url)
@@ -15,7 +16,7 @@ list_hi_ws_csv, list_thw_csv = manager.get_data_csv()
 list_hi_ws_api = manager.get_data_api()
 
 linear.fit(list_hi_ws_csv, list_thw_csv)
-thws_calculated = linear.predict(list_hi_ws_api)
 
-for thw in thws_calculated:
-    print(round(thw[0], 1))
+file = open("linear_shared", "wb")
+shared_linear = pickle.dump(linear, file)
+print(shared_linear)

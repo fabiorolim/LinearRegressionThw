@@ -3,9 +3,9 @@ import unittest
 from sklearn.linear_model import LinearRegression
 from numpy import arange
 
-from facade_collectors import ManagerData
+from core.facade_collectors import ManagerData
 
-import settings
+from core import settings
 
 # TODO: refatorar
 
@@ -31,6 +31,16 @@ class TestValidateModel(unittest.TestCase):
                 thw_expected = self.list_thw[i]
                 range_accepted = self.get_range_accepted(thw_expected)
                 self.assertIn(thw_calculated, range_accepted)
+            i += 1
+
+    def test_thws_equals(self):
+        thws_calculated = self.calculate_thws()
+        i = self.amount_learn
+        for thw in thws_calculated:
+            with self.subTest(self):
+                thw_calculated = [round(thw[0], 2)]
+                thw_expected = self.list_thw[i]
+                self.assertEqual(thw_calculated, thw_expected)
             i += 1
 
     def get_range_accepted(self, thw_expected):
